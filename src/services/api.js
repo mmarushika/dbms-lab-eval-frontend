@@ -1,19 +1,12 @@
+import { api } from "./axios";
 
-export const baseUrl = "http://localhost:8000/api";
-
-export const url_createQuestion = baseUrl + "/v1/questions";
+export const url_createQuestion = "/v1/questions";
 
 export async function apiCreateQuestion(question) {
     console.log(question);
     let response;
     try {
-        response = await fetch(url_createQuestion, {
-            method: 'POST',
-            headers: {
-            'Content-Type':'application/json'
-            },
-            body: JSON.stringify(question)
-        });
+        response = await api.post(url_createQuestion, question);
     } catch(error) {
         console.log(error);
     }
