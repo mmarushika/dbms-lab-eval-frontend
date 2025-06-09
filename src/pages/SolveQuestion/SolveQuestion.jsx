@@ -1,9 +1,14 @@
+import styles from './SolveQuestion.module.css';
+
+import Question from "./Question/Question";
+import Solution from "./Solution/Solution";
 
 function SolveQuestion() {
     return (
-        <>
-            <CodeEditor></CodeEditor>
-        </>
+        <div className={`${styles.frame} page`}>
+            <Question />
+            <Solution />
+        </div>
     );
 }
 
