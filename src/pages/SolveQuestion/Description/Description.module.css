@@ -1,6 +1,5 @@
 .frame {
     margin: 10px;
-    color: rgb(92, 91, 91);
     display: flex;
     flex-wrap: wrap;
     justify-content: center;

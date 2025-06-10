@@ -1,19 +1,19 @@
 import styles from './Table.module.css';
 
 function Table({tableName, rows}) {
-    console.log(Object.keys(rows));
+
     function renderHeaders() {
         return (
-            <tr >
+            <tr>
                 {Object.keys(rows[0]).map(i => <th key={i}>{i}</th>)}
             </tr>
         );
     }
     function renderColumns() {
-        console.log(rows);
+        let key = 0;
         return rows.map(row => {
             return(
-                <tr>
+                <tr key={key++}>
                     {Object.keys(row).map(col =>
                         <td key={col}>{row[col]}</td>
                     )}

@@ -4,8 +4,8 @@ import { useState } from 'react';
 
 import TabButton from './TabButton/TabButton';
 
-function TabPanel({ tabPanels }) {
-    const [activeTab, setActiveTab] = useState("Description");
+function TabPanel({ tabPanels, defaultTab }) {
+    const [activeTab, setActiveTab] = useState(defaultTab);
 
     function changePanel(e) {
         setActiveTab(e.target.id);

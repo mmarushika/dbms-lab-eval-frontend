@@ -2,6 +2,8 @@
     border-radius: 10px;
     height: 100%;
     background-color: white;
+    display: flex;
+    flex-direction: column;
 }
 
 .bar {
@@ -14,6 +16,6 @@
 }
 
 .panel {
+    flex-grow: 1;
     border-radius: 10px;
-    background-color: white;
 }

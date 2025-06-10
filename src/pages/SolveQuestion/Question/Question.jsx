@@ -6,7 +6,7 @@ import Description from '../Description/Description';
 import TabPanel from '../../../components/TabPanel/TabPanel';
 
 function Question() {
-    const [tabPanels, setTabPanels] = useState(getTabPanels) // funciton called only once
+    const [tabPanels, setTabPanels] = useState(getTabPanels) // function called only once
     function getTabPanels() {
         let tabPanels = {}
         tabPanels["Description"] = <Description />
@@ -16,7 +16,7 @@ function Question() {
     }
     return (
         <div className={styles.frame}>
-            <TabPanel tabPanels ={tabPanels}></TabPanel>
+            <TabPanel tabPanels={tabPanels} defaultTab="Description"></TabPanel>
         </div>
     ); 
 }
