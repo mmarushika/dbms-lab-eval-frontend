@@ -17,7 +17,7 @@ function SQLEditor({questionId}) {
         await apiSubmitSolution(data);
     }
     function run() {
-        console.log("Run")
+        //console.log("Run")
     }
     return (
         <div className={`${styles.frame} page`}>
@@ -36,7 +36,8 @@ function SQLEditor({questionId}) {
                 <CodeOutput />
             </div>
         </div>
-    )
+    );
 }
 
 export default SQLEditor;
+
