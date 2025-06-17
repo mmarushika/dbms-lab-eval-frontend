@@ -3,6 +3,7 @@ import './App.css'
 
 import CreateQuestion from './pages/CreateQuestion/CreateQuestion';
 import SolveQuestion from './pages/SolveQuestion/SolveQuestion';
+import SQLEditor from './pages/SQLEditor/SQLEditor';
 
 function App() {
 

@@ -1,7 +1,7 @@
 import styles from './SchemaInput.module.css';
 
 import { useState } from "react";
-import { apiCreateQuestion } from '../../../services/api';
+import { apiCreateQuestion } from '../../../services/api.mjs';
 
 import ColumnInputField from '../ColumnInputField/ColumnInputField';
 

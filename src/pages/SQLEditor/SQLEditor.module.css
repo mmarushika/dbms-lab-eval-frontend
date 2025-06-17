@@ -1,0 +1,27 @@
+
+.frame {
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.buttonPanel {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    width: 100%;
+}
+
+.codeInput {
+    flex: 1;
+    width: 100%;
+    overflow: hidden;
+}
+
+.codeOutput {
+    flex: 1;
+    width: 100%;
+    min-height: 30%;
+}

@@ -1,0 +1,6 @@
+.frame {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    column-gap: 10px;
+}

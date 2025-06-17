@@ -1,0 +1,38 @@
+.tab_select, .tab_underline, .active_select, .active_underline {
+    border: none;
+    font-weight: bold;
+    font-size: 1em;
+    height: 35px;
+}
+
+.tab_select {
+    background-color: transparent;
+    /*color: gray;*/
+    color: white;
+}
+
+.tab_underline {
+    background-color: transparent;
+    color: gray;
+}
+.active_select {
+    background-color: white;
+    color: rgb(0, 140, 255);
+    border-radius: 5px 5px 0 0;
+    height: 100%;
+}
+
+.active_underline {
+    background-color: white;
+    color: rgb(0, 140, 255);
+    border-bottom: 2px solid rgb(0, 140, 255);
+    height: 100%;
+}
+
+.tab_select:hover {
+    color: rgb(183, 183, 183);
+}
+
+.tab_underline:hover {
+   color: rgb(0, 140, 255);;
+}

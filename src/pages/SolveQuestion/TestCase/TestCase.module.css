@@ -1,0 +1,7 @@
+.frame {
+    width: 100%;
+    overflow-y: scroll;
+}
+.heading {
+    color: gray;
+}
