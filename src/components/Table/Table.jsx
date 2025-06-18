@@ -12,7 +12,7 @@ function Table({ tableName, headers, rows}) {
         let key = 0;
         return rows?.map(row => (
             <tr key={key++}>
-                {Object.keys(row).map(col => (
+                {headers.map(col => (
                     <td key={col}>{row[col]}</td>
                 ))}
             </tr>

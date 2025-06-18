@@ -9,16 +9,20 @@ function TestCase({ testCase }) {
         <div className={styles.frame}>
             <h3 className={styles.heading}>Input</h3>
             {
-                testCase?.input?.map(i => <Table
-                                key={i?.tableName} 
-                                tableName={i?.tableName}
-                                headers={Object.keys(JSON.parse(i.rows)[0])}
-                                rows={JSON.parse(i?.rows)}
-                            />
+                testCase.input.map(i => 
+                    <Table
+                        key={i.tableName} 
+                        tableName={i.tableName}
+                        headers={testCase.input_headers}
+                        rows={i.rows}
+                    />
                 )
             }    
             <h3 className={styles.heading}>Output</h3>
-            <Table tableName="" headers={Object.keys(JSON.parse(testCase.output)[0])} rows={JSON.parse(testCase.output)} />
+            <Table 
+                tableName="" 
+                headers={testCase.output_headrs} 
+                rows={testCase.output_rows} />
         </div>
     );
 }

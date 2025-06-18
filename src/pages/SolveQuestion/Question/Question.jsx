@@ -17,7 +17,6 @@ function Question({question}) {
             description={question.description} 
             schemas={question.schemas}
             testCases={question.testCases}/>
-            console.log(question.testCases);
         tabPanels["Test Cases"] = <TestCases testCases={question.testCases}/> 
         tabPanels["Submissions"] = <SubmissionHistory />
         return tabPanels;

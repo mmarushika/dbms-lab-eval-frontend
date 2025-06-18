@@ -33,13 +33,14 @@ function Solution({questionId}) {
             <CodeInput value={solution} setValue={setSolution}/>
         </>*/
         tabPanels["Submission"] = <Submission submission={submission}/>
+        tabPanels["Test Result"] = <Submission submission={submission}/>
         return tabPanels;
     }
     return (
         <div className={styles.frame}>
             <TabPanel 
                 tabPanels ={getTabPanels()} 
-                tabs={["Code", "Submission"]} 
+                tabs={["Code", "Test Result", "Submission"]} 
                 defaultTab="Code"  
                 style="select"   
             />
