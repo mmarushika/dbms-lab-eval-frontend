@@ -24,24 +24,7 @@ function TestCases({ testCases }) {
             />
         );
     }
-        useEffect(() => {
-        console.log(testCases);
-        let tabs = [];
-        let tabPanels = {};
-        let defaultTab = "Case 1";
-        console.log(testCases);
-        for (let i = 0; i <testCases?.length; i++) {
-            tabs.push(`Case ${i+1}`);
-            tabPanels[tabs[i]] = <TestCase testCase={testCases[i]} />;
-        }
-        setTestCaseTabs(
-            <TabPanel 
-                tabPanels={tabPanels} 
-                tabs={tabs} 
-                defaultTab={defaultTab} 
-                style="underline"
-            />);
-    }, [testCases]);
+    
     return ( 
         <div className={styles.frame}>
             { getTestCaseTabs() }

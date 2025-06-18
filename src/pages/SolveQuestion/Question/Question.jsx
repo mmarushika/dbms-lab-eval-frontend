@@ -7,7 +7,6 @@ import Description from '../Description/Description';
 import TabPanel from '../../../components/TabPanel/TabPanel';
 
 function Question({question}) {
-    console.log(question.testCases);
     function getTabs() {
         return ["Description", "Test Cases", "Submissions"];
     }
@@ -21,7 +20,6 @@ function Question({question}) {
             console.log(question.testCases);
         tabPanels["Test Cases"] = <TestCases testCases={question.testCases}/> 
         tabPanels["Submissions"] = <SubmissionHistory />
-        console.log()
         return tabPanels;
     }
     return (

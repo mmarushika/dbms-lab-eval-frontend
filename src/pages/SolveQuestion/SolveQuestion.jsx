@@ -15,8 +15,6 @@ function SolveQuestion({questionId}) {
     useEffect(() => {
         async function fetchQuestion() {
             let question = await apiFetchQuestion(questionId);
-            console.log(question)
-            //question["testCases"] = testCases;
             setQuestion(question);
         }
         fetchQuestion();
