@@ -11,15 +11,20 @@
     color: white;
 }
 
-.tab_underline {
-    background-color: transparent;
-    color: gray;
-}
 .active_select {
     background-color: white;
     color: rgb(0, 140, 255);
     border-radius: 5px 5px 0 0;
     height: 100%;
+}
+
+.tab_select:hover {
+    color: rgb(183, 183, 183);
+}
+
+.tab_underline {
+    background-color: transparent;
+    color: gray;
 }
 
 .active_underline {
@@ -29,10 +34,46 @@
     height: 100%;
 }
 
-.tab_select:hover {
-    color: rgb(183, 183, 183);
-}
-
 .tab_underline:hover {
    color: rgb(0, 140, 255);;
+}
+
+.tab_passed {
+    background-color: transparent;
+    color: rgb(1, 162, 1);
+    border: none;
+}
+
+.active_passed{
+    background-color: white;
+    color: rgb(1, 162, 1);
+    border: none;
+    border-bottom: 2px solid rgb(1, 162, 1);
+    height: 100%;
+}
+
+.tab_failed {
+    background-color: transparent;
+    color: red;
+    border: none;
+}
+
+.active_failed{
+    background-color: white;
+    color:red;
+    border: none;
+    border-bottom: 2px solid red;
+    height: 100%;
+}
+.tab_passed:hover, .tab_failed:hover {
+   background-color: rgba(230, 229, 229, 0.5);
+   border-radius: 5px;
+   padding: 5px;
+   border: none;
+}
+
+.active_passed, .active_failed, .tab_failed, .tab_passed {
+    font-weight: bold;
+    font-size: 1em;
+    margin-right: 10px;
 }

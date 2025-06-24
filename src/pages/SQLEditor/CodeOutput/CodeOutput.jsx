@@ -1,11 +1,23 @@
 import styles from './CodeOutput.module.css';
 
-function CodeOutput() {
-    return (
-            <div className={styles.frame}>
+import Table from '../../../components/Table/Table';
 
-            </div>
-        )
+function CodeOutput({ output, errorMsg }) {
+    console.log(errorMsg);
+    return (
+        <div className={styles.frame}>
+            {
+                errorMsg ?
+                    <div>{errorMsg}</div> :
+                    <Table
+                        tableName=""
+                        headers={Object.keys(output[0])}
+                        rows={output}
+                        isCollapsable={false}
+                    /> 
+            }
+        </div>
+    )
 }
 
 export default CodeOutput;

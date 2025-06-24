@@ -1,13 +1,20 @@
 import styles from './TabPanel.module.css';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 import TabButton from '../TabButton/TabButton';
 
-function TabPanel({ tabPanels, tabs, defaultTab, style }) {
+function TabPanel({ tabPanels, tabs, defaultTab, style, tabHandlers }) {
     const [activeTab, setActiveTab] = useState(defaultTab);
+    useEffect(() => {
+        setActiveTab(defaultTab);
+    }, [defaultTab])
+
     function changePanel(e) {
         setActiveTab(e.target.id);
+        if(tabHandlers) {
+            tabHandlers[e.target.id]();
+        }
     }
     function getTabBarStyle() {
         let tabBarStyle = ``;

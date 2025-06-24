@@ -1,9 +1,19 @@
 .table_name {
   font-size: 1em;
   font-weight: bold;
+  margin-right: 50px;
+}
+
+.collapse {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   margin-bottom: 10px;
 }
 
+.table {
+  margin-bottom: 15px;
+}
 table {
   border-collapse: separate;
   border-spacing: 0;

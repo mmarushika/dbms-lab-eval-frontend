@@ -1,7 +1,6 @@
 import styles from './TestCase.module.css';;
 
 import Table from '../../../components/Table/Table';
-import { formatSchemaRows } from '../../../utils/TableFormatters';
 
 function TestCase({ testCase }) {
 
@@ -13,16 +12,19 @@ function TestCase({ testCase }) {
                     <Table
                         key={i.tableName} 
                         tableName={i.tableName}
-                        headers={testCase.input_headers}
+                        headers={Object.keys(i.rows[0])}
                         rows={i.rows}
+                        isCollapsable={true}
                     />
                 )
             }    
             <h3 className={styles.heading}>Output</h3>
             <Table 
                 tableName="" 
-                headers={testCase.output_headrs} 
-                rows={testCase.output_rows} />
+                headers={Object.keys(testCase.output[0])} 
+                rows={testCase.output}
+                isCollapsable={false}
+            />
         </div>
     );
 }

@@ -1,18 +1,22 @@
 import styles from './Table.module.css';
 import { useState, useEffect } from 'react';
-function Table({ tableName, headers, rows}) {
+import Button from '../Button/Button';
+
+function Table({ tableName, headers, rows, isCollapsable }) {
+    const [collapseState, setCollapseState] = useState(isCollapsable ?? false);
+
     function renderHeaders() {
         return (
             <tr>
-                {headers?.map(i => <th key={i}>{i}</th>)}
+                {headers?.map(i => <th className="gray" key={i}>{i}</th>)}
             </tr>
         );
     }
-    function renderColumns() {
+    function renderRows() {
         let key = 0;
         return rows?.map(row => (
             <tr key={key++}>
-                {headers.map(col => (
+                {Object.keys(rows[0]).map(col => (
                     <td key={col}>{row[col]}</td>
                 ))}
             </tr>
@@ -21,15 +25,29 @@ function Table({ tableName, headers, rows}) {
 
     return (
         <div>
-            <div className={styles.table_name}>{tableName}</div>
-            <table>
-                <thead>
-                    {renderHeaders()}
-                </thead>
-                <tbody>
-                    {renderColumns()}
-                </tbody>
-            </table>
+            <div className={styles.collapse}>
+                <div className={`${styles.table_name} dark-gray`}>{tableName}</div>
+                {
+                    tableName != "" && isCollapsable ? 
+                        <Button 
+                            name={collapseState ? "View" : "Collapse"}
+                            handler={() => setCollapseState(!collapseState)}
+                        /> : <></>
+                }
+        </div >
+            <div className={styles.table}>
+                {
+                    collapseState && isCollapsable ? <></> :
+                        <table>
+                            <thead>
+                                {renderHeaders()}
+                            </thead>
+                            <tbody>
+                                {renderRows()}
+                            </tbody>
+                        </table>
+                }
+            </div>
         </div>
     )
 }

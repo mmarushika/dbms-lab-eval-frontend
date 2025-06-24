@@ -18,7 +18,6 @@ export async function apiCreateQuestion(question) {
     }
 }
 
-
 export async function apiSubmitSolution(input) {
     console.log(input);
     let response;
@@ -31,28 +30,6 @@ export async function apiSubmitSolution(input) {
     return response.data;
 }
 
-
-export async function apiFetchQuestion(question_id) {
-    let response;
-    try {
-        response = await api.get(url_questions, {
-            params: {
-                id: question_id
-            }
-        });
-        console.log(response);
-    } catch(error) {
-        console.log(error);
-    }
-    console.log(response.data)
-    return response.data;
-
-    /*if (response?.ok) {
-        return response.data;
-    } else {
-        return response?.status;
-    }*/
-}
 
 export async function apiFetchTestCases(question_id) {
     let response;

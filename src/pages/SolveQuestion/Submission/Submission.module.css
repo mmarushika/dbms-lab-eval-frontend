@@ -1,0 +1,36 @@
+.frame {
+    width: 100%;
+}
+
+.header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.header h1 {
+    flex: 1;
+}
+.header div {
+    flex: 1;
+    display: flex;
+    justify-content: right;
+}
+
+.code {
+    border-radius: 5px;
+    background-color: rgb(241, 241, 241);
+    color:rgb(61, 61, 61);
+    padding: 10px;
+    font-family: Helvetica;
+    font-size: 1em;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.lineNumber {
+    text-align: right;
+    margin-right: 20px;
+    color: gray;
+}

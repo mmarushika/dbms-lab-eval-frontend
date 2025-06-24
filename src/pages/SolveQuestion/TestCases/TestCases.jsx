@@ -11,7 +11,7 @@ function TestCases({ testCases }) {
         let tabs = [];
         let tabPanels = {}
         let defaultTab = "Case 1";
-        for(let i = 0; i < testCases.length; i++) {
+        for(let i = 0; i < testCases?.length; i++) {
             tabs.push(`Case ${i + 1}`);
             tabPanels[`Case ${i + 1}`] = <TestCase testCase={testCases[i]} />
         }
@@ -21,6 +21,7 @@ function TestCases({ testCases }) {
                 tabs={tabs} 
                 defaultTab={defaultTab} 
                 style="underline"
+                tabHandlers={null}
             />
         );
     }

@@ -15,7 +15,6 @@
 }
 
 .main-heading, .sub-heading {
-  color: rgb(0, 140, 255);
   width: 100%;
   font-weight: bold;
   margin-bottom: 10px;
@@ -29,3 +28,25 @@
   font-size: 1.1em;
 }
 
+.blue {
+  color: rgb(0, 140, 255);
+}
+.green {
+  color: rgb(1, 162, 1);
+}
+
+.red {
+  color: red;
+}
+
+.gray {
+  color: gray;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.dark-gray {
+  color:rgb(61, 61, 61);
+}

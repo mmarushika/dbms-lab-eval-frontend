@@ -1,42 +1,50 @@
 import styles from './SolveQuestion.module.css';
 
+import { QuestionContext } from '../../context/QuestionContext';
 import Question from "./Question/Question";
 import Solution from "./Solution/Solution";
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
+import { useLocation } from 'react-router';
 import { 
-    apiFetchTestCases,
-    apiFetchQuestion 
-} from '../../services/api.mjs';
+    apiFetchSubmissions,
+    apiFetchQuestion
+} from '../../services/StudentApi.mjs';
 
-function SolveQuestion({questionId}) {
-    questionId = '6847ada39879729fffc08dcd';
-    const [question, setQuestion] = useState({})
+
+function SolveQuestion() {
+    const location = useLocation();
+    
+    const {
+        userId,
+        taskId,
+        questionId 
+    } = useContext(QuestionContext);
+
+    const [question, setQuestion] = useState({});
+    const [submissions, setSubmissions] = useState([]);
+    const [submissionsById, setSubmissionsById] = useState({});
+
     useEffect(() => {
-        async function fetchQuestion() {
-            let question = await apiFetchQuestion(questionId);
+        async function fetchData() {
+            let question = await  apiFetchQuestion(questionId)
+            let submissions = await apiFetchSubmissions(userId, taskId, questionId);
+            submissions.reverse();
             setQuestion(question);
+            setSubmissions(submissions);
+            setSubmissionsById(
+                submissions.reduce((acc, submission) => {
+                    acc[submission._id] = submission
+                    return acc;
+                }, {})
+            );
         }
-        fetchQuestion();
-    }, [])
-    /*let question = {
-        _id: 1234,
-        title: "Recyclable and Low Fat Products",
-        description:`Write a solution to find the ids of products that are both low fat and recyclable.
-    Return the result table in any order.
-    The result format is in the following example.`,
-        schemas: [{
-            tableName: 'Employee', 
-            rows: [
-                {columnName: 'id', columnType: 'VARCHAR2'},
-                {columnName: 'name', columnType: 'VARCHAR2'}
-            ]
-          }]
-    }*/
+        fetchData();
+    }, [location.pathname]);
     return (
         <div className={`${styles.frame} page`}>
-            <Question question={question}/>
-            <Solution questionId={questionId}/>
+            <Question question={question} submissions={submissions}/>
+            <Solution submissionsById={submissionsById}/>
         </div>
     );
 }
